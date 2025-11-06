@@ -4,20 +4,27 @@ defmodule D01Test do
 
 
   test "part 1 example" do
-    assert D01.solve("1122") == 3
-    assert D01.solve("1111") == 4
-    assert D01.solve("1234") == 0
-    assert D01.solve("91212129") == 9
+    assert D01.part1("1122") == 3
+    assert D01.part1("1111") == 4
+    assert D01.part1("1234") == 0
+    assert D01.part1("91212129") == 9
     #D01.solve(example())
     #assert true
   end
 
-
+  test "part 2 example" do
+    assert D01.part2("1212") == 6
+    assert D01.part2("1221") == 0
+    assert D01.part2("123425") == 4
+    assert D01.part2("123123") == 12
+    assert D01.part2("12131415") == 4
+  end
 
   test "part 1 solve" do
-    assert D01.solve(puzzle_input()) == 1251
-    #D01.solve(example())
-    #assert true
+    assert D01.part1(puzzle_input()) == 1251
+  end
+  test "part 2 solve" do
+    assert D01.part2(puzzle_input()) == 1244
   end
 
 
