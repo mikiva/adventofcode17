@@ -5,8 +5,6 @@ defmodule D01 do
     numbers = String.split(input, "", trim: true)
     |> Enum.map(fn n -> String.to_integer(n) end)
 
-
-   # IO.inspect(numbers)
     range = 0..Enum.count(numbers) - 1
     range
     |> Enum.map(fn l -> check_if_next_match(numbers, l) end)
@@ -22,8 +20,6 @@ defmodule D01 do
     numbers = String.split(input, "", trim: true)
     |> Enum.map(fn n -> String.to_integer(n) end)
 
-
-   # IO.inspect(numbers)
     range = 0..Enum.count(numbers) - 1
     range
     |> Enum.map(fn l -> check_if_half_ahead_match(numbers, l) end)
@@ -34,31 +30,22 @@ defmodule D01 do
   end
 
   defp check_if_half_ahead_match(input, idx) do
-    #current = String.at(input, idx)
     current = Enum.at(input, idx)
     n_idx = idx + Integer.floor_div(Enum.count(input), 2)
     next_index = rem(n_idx, Enum.count(input))
     next = Enum.at(input, next_index)
     found = current == next
-#    IO.inspect({found ,idx , current, next})
-
     {found, idx, current, next}
 
   end
 
   defp check_if_next_match(input, idx) do
-    #current = String.at(input, idx)
     current = Enum.at(input, idx)
     next_index = rem(idx+1, Enum.count(input))
     next = Enum.at(input, next_index)
     found = current == next
-#    IO.inspect({found ,idx , current, next})
 
     {found, idx, current, next}
 
-  end
-
-  def hello do
-    :world
   end
 end
